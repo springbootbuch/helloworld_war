@@ -38,7 +38,7 @@ public class Application extends SpringBootServletInitializer {
     }
 
     public static void main(String[] args) {
-        configureApplication(new SpringApplicationBuilder((Object[])args));
+        configureApplication(new SpringApplicationBuilder((Object[])args)).run(args);
     }
     
     private static SpringApplicationBuilder configureApplication(SpringApplicationBuilder builder) {
