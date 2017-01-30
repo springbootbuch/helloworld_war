@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 
-
     @RestController
     public static class HelloWorldController {
 
