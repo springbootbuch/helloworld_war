@@ -1,0 +1,9 @@
+<Context docBase="helloworld_war">
+    <Resource name="jdbc/greetingsDB"
+               type="javax.sql.DataSource"  auth="Container"
+               description="Database for helloworld_war"
+               maxActive="100" maxIdle="30" maxWait="10000"
+               username="helloworld_war" password="helloworld_war"
+               driverClassName="org.postgresql.Driver"
+               url="jdbc:postgresql://${DB_PORT_5432_TCP_ADDR}:${DB_PORT_5432_TCP_PORT}/helloworld_war"/>
+</Context>
