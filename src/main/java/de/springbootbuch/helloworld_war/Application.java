@@ -1,7 +1,6 @@
 package de.springbootbuch.helloworld_war;
 
 import java.util.List;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
@@ -34,11 +33,15 @@ public class Application extends SpringBootServletInitializer {
     }
 
     @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Application.class);
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return configureApplication(builder);
     }
 
-    public static void main(String... args) {
-        SpringApplication.run(Application.class, args);
+    public static void main(String[] args) {
+        configureApplication(new SpringApplicationBuilder((Object[])args));
+    }
+    
+    private static SpringApplicationBuilder configureApplication(SpringApplicationBuilder builder) {
+        return builder.sources(Application.class);
     }
 }
