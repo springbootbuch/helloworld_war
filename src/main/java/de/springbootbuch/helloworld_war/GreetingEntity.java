@@ -14,48 +14,46 @@ import javax.validation.constraints.Size;
 @Table(name = "greetings")
 public class GreetingEntity implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    
-    @Column(length = 1024, nullable = false, unique = true)    
-    @Size(max = 1024)
-    private String value;
-    
-    
+	private static final long serialVersionUID = 1L;
 
-    protected GreetingEntity() {
-    }
-    
-    public GreetingEntity(String value) {
-	this.value = value;
-    }              
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
-    public String getValue() {
-        return value;
-    }
+	@Column(length = 1024, nullable = false, unique = true)
+	@Size(max = 1024)
+	private String value;
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.value);
-        return hash;
-    }
+	protected GreetingEntity() {
+	}
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final GreetingEntity other = (GreetingEntity) obj;
-        return Objects.equals(this.value, other.value);
-    } 
+	public GreetingEntity(String value) {
+		this.value = value;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	@Override
+	public int hashCode() {
+		int hash = 5;
+		hash = 53 * hash + Objects.hashCode(this.value);
+		return hash;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		final GreetingEntity other = (GreetingEntity) obj;
+		return Objects.equals(this.value, other.value);
+	}
 }
