@@ -1,6 +1,7 @@
 package de.springbootbuch.helloworld_war;
 
 import java.util.List;
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.data.domain.Sort;
@@ -28,7 +29,7 @@ public class Application
 
 		@GetMapping("/greetings")
 		public List<GreetingEntity> greetings() {
-			return this.greetingRepository.findAll(new Sort("value"));
+			return this.greetingRepository.findAll(Sort.by("value"));
 		}
 	}
 }
